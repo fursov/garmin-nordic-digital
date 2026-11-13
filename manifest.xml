@@ -3,6 +3,7 @@
     <iq:application id="a7c7ee7ca6af42f0a461d6c7ecc3eb67"
                     type="watchface"
                     name="@Strings.AppName"
+                    launcherIcon="@Drawables.LauncherIcon"
                     entry="NordicDigitalApp"
                     minApiLevel="3.2.0"
                     version="0.1.0">

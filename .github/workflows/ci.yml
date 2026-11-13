@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Static contract tests
+        run: python -m unittest discover -s tests -v
+
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+      - name: Install Garmin Connect IQ SDK
+        uses: DuckSoft/setup-connectiq-actions@v1
+        with:
+          sdk-version: "9.3.0"
+      - name: Create ephemeral signing key (CI only)
+        run: |
+          openssl genrsa -out "$RUNNER_TEMP/ci_key.pem" 4096
+          openssl rsa -in "$RUNNER_TEMP/ci_key.pem" -outform DER -out "$RUNNER_TEMP/ci_key.der"
+      - name: Compile vivoactive6 watch face
+        run: |
+          mkdir -p bin
+          monkeyc -f monkey.jungle -d vivoactive6 -o bin/NordicDigital.prg -y "$RUNNER_TEMP/ci_key.der" -w

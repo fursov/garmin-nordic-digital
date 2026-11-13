@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <string id="AppName">Nordic Digital</string>
+    <string id="ServerUrlTitle">Home Assistant HTTPS URL</string>
+    <string id="ServerUrlPrompt">Example: https://ha.example.com</string>
+    <string id="AccessTokenTitle">Garmin Data Bridge token</string>
+    <string id="AccessTokenPrompt">Paste the token from the HA integration</string>
+</resources>

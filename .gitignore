@@ -1,0 +1,11 @@
+bin/
+out/
+*.prg
+*.iq
+*.der
+*.pem
+*.key
+.idea/
+.vscode/.settings/
+__pycache__/
+.pytest_cache/

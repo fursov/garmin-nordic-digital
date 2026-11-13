@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <properties>
+        <property id="haUrl" type="string"></property>
+        <property id="apiToken" type="string"></property>
+    </properties>
+</resources>

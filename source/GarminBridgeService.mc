@@ -50,7 +50,7 @@ class GarminBridgeService extends System.ServiceDelegate {
         );
     }
 
-    function onResponse(responseCode, data) {
+    function onResponse(responseCode as Number, data as Dictionary?) as Void {
         if (responseCode != 200 || !(data instanceof Dictionary)) {
             Background.exit({"error" => responseCode});
             return;
@@ -61,7 +61,7 @@ class GarminBridgeService extends System.ServiceDelegate {
             return;
         }
 
-        var source = data["items"];
+        var source = data["items"] as Array;
         var slots = [];
         for (var i = 0; i < source.size() && i < 2; i++) {
             var item = source[i];

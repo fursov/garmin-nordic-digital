@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+    <settings>
+        <setting propertyKey="@Properties.haUrl" title="@Strings.ServerUrlTitle" prompt="@Strings.ServerUrlPrompt">
+            <settingConfig type="alphaNumeric" required="true"/>
+        </setting>
+        <setting propertyKey="@Properties.apiToken" title="@Strings.AccessTokenTitle" prompt="@Strings.AccessTokenPrompt">
+            <settingConfig type="alphaNumeric" required="true"/>
+        </setting>
+    </settings>
+</resources>

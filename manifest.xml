@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iq:manifest version="3" xmlns:iq="http://www.garmin.com/xml/connectiq">
+    <iq:application id="a7c7ee7ca6af42f0a461d6c7ecc3eb67"
+                    type="watchface"
+                    name="@Strings.AppName"
+                    launcherIcon="@Drawables.LauncherIcon"
+                    entry="NordicDigitalApp"
+                    minApiLevel="3.2.0"
+                    version="0.1.0">
+        <iq:products>
+            <iq:product id="vivoactive6"/>
+        </iq:products>
+        <iq:permissions>
+            <iq:uses-permission id="Background"/>
+            <iq:uses-permission id="Communications"/>
+        </iq:permissions>
+        <iq:languages>
+            <iq:language>eng</iq:language>
+        </iq:languages>
+        <iq:barrels/>
+    </iq:application>
+</iq:manifest>
